@@ -7,9 +7,13 @@ import org.aspectj.weaver.ast.Test;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/home")
@@ -33,7 +37,7 @@ public class IndexController {
         iter.remove();
         System.out.println(a.get(0));*/
 
-        TestDto testDto=new TestDto();
+       /* TestDto testDto=new TestDto();
         TestDto testDto1=new TestDto();
         System.out.println(testDto==testDto1);
         System.out.println(testDto.equals(testDto1));
@@ -73,6 +77,13 @@ public class IndexController {
         }
         per.setName("Rollen");
         per.setAge(20);
-        System.out.println(per);
+        System.out.println(per);*/
+       /* //保留小数位数，不四舍五入
+        DecimalFormat formater = new DecimalFormat("#0.##");
+        formater.setRoundingMode(RoundingMode.FLOOR);
+        System.out.println(formater.format(123456.7897456));*/
+
+        /*Pattern pattern = Pattern.compile("\"result\":\"(.+?)\"");
+        Matcher result = pattern.matcher(new String("{\"status\":0,\"result\":{\"location\":{\"lng\":116.32842518536647,\"lat\":37.91230921361678},\"precise\":0,\"confidence\":16,\"level\":\"区县\"}}"));*/
     }
 }
