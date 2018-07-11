@@ -41,5 +41,6 @@
     </bean>
 
     <aop:aspectj-autoproxy/>
+    <!--强制使用CGLIB-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>
