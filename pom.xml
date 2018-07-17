@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dbcoder</groupId>
-    <artifactId>myspringthree</artifactId>
+    <artifactId>myspringSource</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
