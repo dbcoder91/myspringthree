@@ -6,8 +6,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--此文件负责整个mvc中的配置-->
 
-    <!--启用spring的一些annotation -->
-    <context:annotation-config/>
+    <!--启用spring的一些annotation 在使用了context:component-scan同样会把>隐式地向 Spring容器注册AutowiredAnnotationBeanPostProcessor、
+    RequiredAnnotationBeanPostProcessor、CommonAnnotationBeanPostProcessor以及PersistenceAnnotationBeanPostProcessor这4个BeanPostProcessor
+     实现自动注入，所以可以省略以下配置：context:annotation-config-->
+    <!--<context:annotation-config/>-->
 
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
     <mvc:annotation-driven/>
@@ -28,5 +30,5 @@
     </bean>
 
     <!-- 自动扫描装配 -->
-    <context:component-scan base-package="com.dbcoder.controller"/>
+    <context:component-scan base-package="com.dbcoder"/>
 </beans>

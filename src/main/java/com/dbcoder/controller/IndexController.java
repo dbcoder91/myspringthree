@@ -1,11 +1,15 @@
 package com.dbcoder.controller;
 
 
+import com.dbcoder.annotation.TestA;
 import com.dbcoder.dto.PersonDto;
 import com.dbcoder.dto.TestDto;
 import org.aspectj.weaver.ast.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -15,13 +19,18 @@ import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Controller
+@RestController
 @RequestMapping("/home")
 public class IndexController {
 
+    @Autowired
+    private TestA testA;
+
     @RequestMapping("/index")
     public String index(){
-        return "index";
+        testA.setName("testA");
+        String a=testA.getName();
+        return a;
     }
 
     public static void main(String[] args) {

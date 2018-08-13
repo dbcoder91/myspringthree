@@ -7,8 +7,16 @@
     <!--此文件负责非mvc组件的配置-->
     <!-- 引入配置文件 -->
 
+    <!--<context:annotation-config/>-->
     <!--Spring可以去自动扫描base-package下面或者子包下面的java文件，如果扫描到有@Component @Controller @Service等这些注解的类，则把这些类注册为bean-->
-    <context:component-scan base-package="com.dbcoder"/>
+    <!--<context:component-scan base-package="com.dbcoder"/>-->
+
+  <!--  <bean id="testA" class="com.dbcoder.annotation.TestA">
+        <property name="name" value="test"/>
+    </bean>
+    <bean id="testB" class="com.dbcoder.annotation.TestB">
+        <property name="testA" ref="testA"/>
+    </bean>-->
 
     <!-- redis -->
     <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
@@ -43,4 +51,6 @@
     <aop:aspectj-autoproxy/>
     <!--强制使用CGLIB-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <import resource="classpath*:spring/applicationContext-threadPool.xml"/>
 </beans>
