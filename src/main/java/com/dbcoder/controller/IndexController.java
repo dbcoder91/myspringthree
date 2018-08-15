@@ -2,35 +2,29 @@ package com.dbcoder.controller;
 
 
 import com.dbcoder.annotation.TestA;
-import com.dbcoder.dto.PersonDto;
-import com.dbcoder.dto.TestDto;
-import org.aspectj.weaver.ast.Test;
+import com.dbcoder.aop.annotation.CacheRedis;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+@RequestMapping(value = "/api/home")
 @RestController
-@RequestMapping("/home")
 public class IndexController {
 
     @Autowired
     private TestA testA;
 
-    @RequestMapping("/index")
+    @RequestMapping(value = "/index")
     public String index(){
         testA.setName("testA");
         String a=testA.getName();
         return a;
+    }
+
+    @RequestMapping(value = "/testAspectj")
+    @CacheRedis(key = "test",expireTime = 20)
+    public String testAspectj(){
+        return "进入testAspectj测试";
     }
 
     public static void main(String[] args) {

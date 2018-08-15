@@ -18,6 +18,10 @@
         <property name="testA" ref="testA"/>
     </bean>-->
 
+    <!-- 1.自动扫描装配 -->
+    <!--2.Spring自动扫描base-package下面或者子包的java文件，如果扫描到有@Component,@Controller,@Service等这些注解，则把这些类注册为bean-->
+   <!-- <context:component-scan base-package="com.dbcoder"/>-->
+
     <!-- redis -->
     <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
         <property name="maxIdle" value="8"/>
@@ -48,9 +52,10 @@
         </property>
     </bean>
 
-    <aop:aspectj-autoproxy/>
+    <!--是aspectj注解起作用，自动为其生成代理类
+    <aop:aspectj-autoproxy/>-->
     <!--强制使用CGLIB-->
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
 
     <import resource="classpath*:spring/applicationContext-threadPool.xml"/>
 </beans>

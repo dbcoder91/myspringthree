@@ -14,4 +14,9 @@ public class SpringTaskPoolTest extends BaseJunit4Test {
     public void name() {
         taskExecutor.execute(new MyRunnable());
     }
+
+    @Test
+    public void testA(){
+        System.out.println("test aspectj");
+    }
 }
