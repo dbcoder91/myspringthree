@@ -27,7 +27,7 @@ public class CacheService {
         String key=cacheRedis.key();
         int expireTime=cacheRedis.expireTime();
         //do something...
-        logger.info("-----redis-----[key = " + key + "]"+"[expireTime = " + expireTime + "]");
-        logger.info("the result of this method is" + result + ",and has been cached.");
+        System.out.println("-----redis-----[key = " + key + "]"+"[expireTime = " + expireTime + "]");
+        System.out.println("the result of this method is" + result + ",and has been cached.");
     }
 }

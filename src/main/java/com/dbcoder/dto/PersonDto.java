@@ -1,8 +1,11 @@
 package com.dbcoder.dto;
 
+import java.util.List;
+
 public class PersonDto {
     private String name;
     private int age;
+    private List<TestDto> testDtos;
 
     @Override
     public String toString(){
@@ -23,5 +26,13 @@ public class PersonDto {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public List<TestDto> getTestDtos() {
+        return testDtos;
+    }
+
+    public void setTestDtos(List<TestDto> testDtos) {
+        this.testDtos = testDtos;
     }
 }

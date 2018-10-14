@@ -40,7 +40,7 @@ public class ThreadTest {
         //endregion
 
         //region 使用Callable接口和Future接口创建线程
-        /*//创建MyCallable对象
+        //创建MyCallable对象
         Callable<Integer> myCallable=new MyCallable();
         //使用FutureTask来包装MyCallable对象
         FutureTask<Integer> ft=new FutureTask<Integer>(myCallable);
@@ -63,11 +63,11 @@ public class ThreadTest {
             e.printStackTrace();
         }catch (ExecutionException e){
             e.printStackTrace();
-        }*/
+        }
         //endregion
 
         //region 终止某一线程的运行
-        MyRunnable myRunnable=new MyRunnable();
+       /* MyRunnable myRunnable=new MyRunnable();
         Thread thread=new Thread(myRunnable);
         for (int i=0;i<100;i++){
             System.out.println(Thread.currentThread().getName()+" "+i);
@@ -78,7 +78,7 @@ public class ThreadTest {
             if(i==40){
                 myRunnable.stopThread();
             }
-        }
+        }*/
         //endregion
     }
 }
