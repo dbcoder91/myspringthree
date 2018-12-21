@@ -1,11 +1,14 @@
 package com.dbcoder.string;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.dbcoder.dto.PersonDto;
 import com.dbcoder.dto.TestDto;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -136,18 +139,35 @@ public class StringTest {
         System.out.println(a.equals(0));*/
         /*System.out.println(isMobileNO("11111111111"));*/
         /*System.out.println(BigDecimal.ZERO.compareTo(BigDecimal.ONE));*/
-        System.out.println(isMobileNO("19999999999"));
+        /*System.out.println(isMobileNO("19999999999"));*/
+        /*System.out.println(new Date());*/
+        /*PersonDto personDto=new PersonDto();
+        personDto.setName("test");
+        personDto.setAge(10);
+        String jsonString= JSON.toJSONString(personDto);
+        System.out.println(jsonString);*/
+
+        /*String test = "12";
+        String[] testArray = test.split(",");
+        BigDecimal a = new BigDecimal(testArray[0]);
+        BigDecimal b = new BigDecimal(testArray[1]);
+        System.out.println("a:" + a + ",b:" + b);*/
+
+        String a = "aaa";
+        String[] aArrayList = a.split(",");
+        System.out.println();
     }
 
     public static boolean isMobileNO(String mobiles) {
-        Pattern p = Pattern.compile("^1[345789]\\d{9}$");
+        String mach = "^1[345789]\\d{9}$";
+        Pattern p = Pattern.compile(mach);
         Matcher m = p.matcher(mobiles);
         return m.matches();
     }
 
     public static BigDecimal convertStringToBigDecimal(String str) {
 
-        if (StringUtils.isNotEmpty(str)&&isNumeric(str)) {
+        if (StringUtils.isNotEmpty(str) && isNumeric(str)) {
             BigDecimal bigDecimal = new BigDecimal(str);
             return bigDecimal;
         } else {
@@ -164,14 +184,15 @@ public class StringTest {
     public static boolean isNumeric(String str) {
         Pattern pattern = Pattern.compile("-?[0-9]+.?[0-9]+");
         Matcher isNum = pattern.matcher(str);
-        if (isNum.matches()||StringUtils.isNumeric(str)) {
+        if (isNum.matches() || StringUtils.isNumeric(str)) {
             return true;
         }
         return false;
     }
 
 
-    private void testNotNull(PersonDto personDto){
+    private void testNotNull(PersonDto personDto) {
         personDto.setAge(1);
     }
+
 }

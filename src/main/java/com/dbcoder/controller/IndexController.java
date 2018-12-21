@@ -3,7 +3,9 @@ package com.dbcoder.controller;
 
 import com.dbcoder.annotation.TestA;
 import com.dbcoder.aop.annotation.CacheRedis;
+import com.dbcoder.dto.PersonDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +25,7 @@ public class IndexController {
 
     @RequestMapping(value = "/testAspectj")
     @CacheRedis(key = "test",expireTime = 20)
-    public String testAspectj(){
+    public String testAspectj(@Validated PersonDto personDto){
         return "进入testAspectj测试";
     }
 

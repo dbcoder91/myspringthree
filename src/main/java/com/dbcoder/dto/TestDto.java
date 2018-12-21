@@ -1,11 +1,15 @@
 package com.dbcoder.dto;
 
+import com.sun.istack.internal.NotNull;
+
 /**
 * @Description: 测试DTO
 * @author 董博
 * @date 2018/6/14
 */
 public class TestDto {
+
+
     private String name;
 
     public String getName() {

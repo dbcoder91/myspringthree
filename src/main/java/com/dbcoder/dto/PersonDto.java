@@ -1,8 +1,11 @@
 package com.dbcoder.dto;
 
+
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class PersonDto {
+    @NotNull(message="不能为空")
     private String name;
     private int age;
     private List<TestDto> testDtos;

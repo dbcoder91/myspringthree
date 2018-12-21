@@ -32,7 +32,7 @@ public class ThreadLocalTest {
    }
 
     public static void main(String[] args) {
-        A a=new A();
+       /* A a=new A();
         B b=new B();
         for (int i=0;i<15;i++){
             String str1="线程-"+i;
@@ -50,6 +50,6 @@ public class ThreadLocalTest {
                     }
                 }
             }.start();
-        }
+        }*/
     }
 }
