@@ -1,6 +1,5 @@
 package com.dbcoder.dto;
 
-import com.sun.istack.internal.NotNull;
 
 /**
 * @Description: 测试DTO

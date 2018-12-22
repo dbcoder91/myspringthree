@@ -1,14 +1,10 @@
 package com.dbcoder.collection;
 
-import com.dbcoder.dto.PersonDto;
-import sun.rmi.runtime.Log;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MapTest {
     public static void main(String[] args) {
@@ -40,7 +36,14 @@ public class MapTest {
         Integer b=new Integer(0);
         System.out.println(b);*/
 
+        List<String> list =new ArrayList<>();
+        list.add("不纠结");
+        testListString(list);
+        System.out.println(list);
+    }
 
+    public static void testListString(List<String> list){
+        list.add("从来不纠结");
     }
 
     public static String currencyFormatValue(BigDecimal num){

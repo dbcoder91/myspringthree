@@ -1,4 +1,3 @@
-import com.dbcoder.thread.MyRunnable;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
