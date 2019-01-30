@@ -4,29 +4,13 @@ import com.dbcoder.dto.PersonDto;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArraylistTest {
     public static void main(String[] args) {
-     /*   List<PersonDto> personDtoList = new ArrayList<>();
-        PersonDto personDto = new PersonDto();
-        personDto.setAge(1);
-        personDto.setName("test1");
-        personDtoList.add(personDto);
-        personDto = new PersonDto();
-        personDto.setName("test2");
-        personDto.setAge(2);
-        personDtoList.add(personDto);
 
-        personDtoList.add(null);
-
-        personDto = new PersonDto();
-        personDto.setAge(3);
-        personDto.setName("test3");
-
-        personDtoList.add(personDto);
-        System.out.println();*/
 /*
         if (personDtoList.contains(personDto)){
 
@@ -45,17 +29,42 @@ public class ArraylistTest {
 
         System.out.println();*/
 
-        List<Long> aList =new ArrayList<>();
-        aList.add(1L);
-        aList.add(2L);
-        aList.add(3L);
+        /*List<String> aList =new ArrayList<>();
 
-        List<Long> bList = new ArrayList<>();
-        bList.add(2L);
-        bList.add(3L);
-        bList.add(1L);
+        List<String> bList = new ArrayList<>();
+        bList.add("4");
+        bList.add("5");
+        bList.add("6");
+        for (String item:aList) {
 
-        System.out.println(aList.containsAll(bList));
+        }
+
+        System.out.println(bList.containsAll(aList));*/
+
+     /*   BigDecimal a = new BigDecimal(1);
+       a= a.add(new BigDecimal(2));
+        System.out.println(a);*/
+
+        List<PersonDto> personDtoList = new ArrayList<>();
+        PersonDto personDto = new PersonDto();
+        personDto.setAge(1);
+        personDto.setName("test1");
+        personDtoList.add(personDto);
+        personDto = new PersonDto();
+        personDto.setName("test2");
+        personDto.setAge(2);
+        personDtoList.add(personDto);
+
+
+        personDto = new PersonDto();
+        personDto.setAge(3);
+        personDto.setName("test3");
+
+        personDtoList.add(personDto);
+       String a = testChangeArrayListValue(personDtoList);
+        System.out.println(a);
+
+
     }
 
     public static List<Long> getListOne(List<Long> longList){
@@ -75,5 +84,12 @@ public class ArraylistTest {
 
     public static void initPersionDto(@Validated PersonDto personDto){
         System.out.println();
+    }
+
+    public static String testChangeArrayListValue ( List<PersonDto> personDtoList) {
+        for (PersonDto personDto1:personDtoList) {
+            personDto1.setName("12345");
+        }
+        return "1";
     }
 }
