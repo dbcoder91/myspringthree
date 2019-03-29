@@ -153,9 +153,19 @@ public class StringTest {
         BigDecimal b = new BigDecimal(testArray[1]);
         System.out.println("a:" + a + ",b:" + b);*/
 
-        String a = "aaa";
+    /*    String a = "aaa";
         String[] aArrayList = a.split(",");
-        System.out.println();
+        System.out.println();*/
+
+/*    Integer a = new Integer(1);
+    Integer b = new Integer(1);
+        int hashA = a.hashCode();
+        int hashB = b.hashCode();
+        System.out.println();*/
+
+String a = "409820190219000000020012";
+        System.out.println(Long.parseLong(a));
+
     }
 
     public static boolean isMobileNO(String mobiles) {

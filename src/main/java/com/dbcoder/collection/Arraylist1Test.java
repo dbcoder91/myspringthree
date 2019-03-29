@@ -1,14 +1,17 @@
 package com.dbcoder.collection;
 
 import com.dbcoder.dto.PersonDto;
+import org.springframework.util.CollectionUtils;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
-public class ArraylistTest {
+public class Arraylist1Test {
     public static void main(String[] args) {
 
 /*
@@ -45,7 +48,7 @@ public class ArraylistTest {
        a= a.add(new BigDecimal(2));
         System.out.println(a);*/
 
-        List<PersonDto> personDtoList = new ArrayList<>();
+/*        List<PersonDto> personDtoList = new ArrayList<>();
         PersonDto personDto = new PersonDto();
         personDto.setAge(1);
         personDto.setName("test1");
@@ -62,9 +65,49 @@ public class ArraylistTest {
 
         personDtoList.add(personDto);
        String a = testChangeArrayListValue(personDtoList);
-        System.out.println(a);
+        System.out.println(a);*/
+ /*       List<String> testListString = Arrays.asList("a","b");
+        List<String> testListStrings = Arrays.asList(new String[]{"1","2"});
+        System.out.println();*/
+      /*  testAAA("a","b","c");
+        testAAA(new String[] {"1","2"});*/
+//      BigDecimal b = null;
+//      testReturn(b);
+//        System.out.println(b);
+        List<PersonDto> personDtoList1 = new ArrayList<>();
 
+        List<PersonDto> personDtoList = new ArrayList<>();
+        PersonDto p = new PersonDto();
+        p.setName("test1 ");
+        p.setAge(1);
+        p.setTestAge(11);
+        personDtoList.add(p);
+        personDtoList1.addAll(personDtoList);
 
+        /*for (PersonDto personDto : personDtoList) {
+            if (personDto != null) {
+                personDto.setName(personDto.getName().trim());
+                personDto.setAge(2);
+                personDto.setTestAge(null);
+            }
+        }*/
+        List<PersonDto> personDtoList2 = new ArrayList<>();
+        if (CollectionUtils.isEmpty(personDtoList2)) {
+            System.out.println();
+        }
+
+        System.out.println();
+
+     /*  List<String> stringList = new ArrayList<>();
+       stringList.add("test1 ");
+       for (String s : stringList) {
+           s = s.trim();
+       }
+        System.out.println();*/
+    }
+
+    public static void testReturn(BigDecimal a) {
+        a = BigDecimal.ZERO;
     }
 
     public static List<Long> getListOne(List<Long> longList){
@@ -91,5 +134,10 @@ public class ArraylistTest {
             personDto1.setName("12345");
         }
         return "1";
+    }
+
+
+    public static <T> void testAAA(T ... a) {
+        System.out.println("abc");
     }
 }

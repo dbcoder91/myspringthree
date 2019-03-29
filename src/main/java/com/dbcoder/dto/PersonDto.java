@@ -7,8 +7,9 @@ import java.util.List;
 public class PersonDto {
     @NotNull(message="不能为空")
     private String name;
-    private int age;
+    private Integer age;
     private List<TestDto> testDtos;
+    private Integer testAge;
 
     @Override
     public String toString(){
@@ -23,11 +24,11 @@ public class PersonDto {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -37,5 +38,13 @@ public class PersonDto {
 
     public void setTestDtos(List<TestDto> testDtos) {
         this.testDtos = testDtos;
+    }
+
+    public Integer getTestAge() {
+        return testAge;
+    }
+
+    public void setTestAge(Integer testAge) {
+        this.testAge = testAge;
     }
 }
