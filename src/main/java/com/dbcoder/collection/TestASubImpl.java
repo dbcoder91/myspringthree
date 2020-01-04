@@ -3,6 +3,7 @@ package com.dbcoder.collection;
 public class TestASubImpl implements TestASub {
     @Override
     public Integer C() {
+
         return null;
     }
 

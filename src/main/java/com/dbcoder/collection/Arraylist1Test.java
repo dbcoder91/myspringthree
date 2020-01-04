@@ -1,19 +1,15 @@
 package com.dbcoder.collection;
 
+import com.alibaba.fastjson.JSON;
 import com.dbcoder.dto.PersonDto;
-import org.springframework.util.CollectionUtils;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 public class Arraylist1Test {
     public static void main(String[] args) {
-
 /*
         if (personDtoList.contains(personDto)){
 
@@ -74,15 +70,33 @@ public class Arraylist1Test {
 //      BigDecimal b = null;
 //      testReturn(b);
 //        System.out.println(b);
-        List<PersonDto> personDtoList1 = new ArrayList<>();
 
         List<PersonDto> personDtoList = new ArrayList<>();
         PersonDto p = new PersonDto();
-        p.setName("test1 ");
-        p.setAge(1);
-        p.setTestAge(11);
+        p.setName("test1");
+        p.setAge(10);
+        p.setAmount(new BigDecimal(10));
         personDtoList.add(p);
-        personDtoList1.addAll(personDtoList);
+        p = new PersonDto();
+        p.setName("test2");
+        p.setAge(9);
+        p.setAmount(new BigDecimal(9));
+        personDtoList.add(p);
+
+//
+//        List<PersonDto> personDtoList1 = new ArrayList<>();
+//        p = new PersonDto();
+//        p.setName("test2");
+//        personDtoList1.add(p);
+//
+//        p = new PersonDto();
+//        p.setName("test1");
+//        personDtoList1.add(p);
+//
+//
+//        if (personDtoList.containsAll(personDtoList1)) {
+//
+//        }
 
         /*for (PersonDto personDto : personDtoList) {
             if (personDto != null) {
@@ -91,12 +105,12 @@ public class Arraylist1Test {
                 personDto.setTestAge(null);
             }
         }*/
-        List<PersonDto> personDtoList2 = new ArrayList<>();
-        if (CollectionUtils.isEmpty(personDtoList2)) {
-            System.out.println();
-        }
-
-        System.out.println();
+//        List<PersonDto> personDtoList2 = new ArrayList<>();
+//        if (CollectionUtils.isEmpty(personDtoList2)) {
+//            System.out.println();
+//        }
+//
+//        System.out.println();
 
      /*  List<String> stringList = new ArrayList<>();
        stringList.add("test1 ");
@@ -104,13 +118,48 @@ public class Arraylist1Test {
            s = s.trim();
        }
         System.out.println();*/
+
+//    final String a = "Y";
+//     String b = "Y";
+//        System.out.println(a == b);
+//        BigDecimal a = new BigDecimal(100);
+//        BigDecimal b = new BigDecimal(50);
+//        BigDecimal c = a.subtract(b);
+//        System.out.println(c);
+       /* for (PersonDto personDto : personDtoList) {
+            if (personDto.getAge().equals(9)) {
+                personDto.setAmount(BigDecimal.ZERO);
+            }
+        }
+        personDtoList = personDtoList.stream().sorted(Comparator.comparing(PersonDto::getAge)).collect(Collectors.toList());
+        for (PersonDto personDto : personDtoList) {
+            System.out.println(personDto.getAmount());
+        }
+
+        Long a = 100L;
+        String b = a.toString();*/
+      /* List<PersonDto> personDtos = new ArrayList<>();
+        personDtos.add(null);
+        PersonDto personDto = new PersonDto();
+        personDto.setAmount(BigDecimal.ZERO);
+        personDtos.add(personDto);
+       personDtos.stream().forEach(personDto1 -> {
+           System.out.println(personDto1.getAmount());
+       });*/
+        String personDtoStr = "";
+        List<PersonDto> personDtos = JSON.parseArray(personDtoStr, PersonDto.class);
+        System.out.println();
+    }
+
+    public void testString(String a) {
+        System.out.println();
     }
 
     public static void testReturn(BigDecimal a) {
         a = BigDecimal.ZERO;
     }
 
-    public static List<Long> getListOne(List<Long> longList){
+    public static List<Long> getListOne(List<Long> longList) {
         longList.add(1L);
         longList.add(2L);
         longList.add(3L);
@@ -118,26 +167,26 @@ public class Arraylist1Test {
     }
 
 
-    public static List<Long> getListTwo(List<Long> longList){
+    public static List<Long> getListTwo(List<Long> longList) {
         longList.add(4L);
         longList.add(5L);
         longList.add(6L);
         return longList;
     }
 
-    public static void initPersionDto(@Validated PersonDto personDto){
+    public static void initPersionDto(@Validated PersonDto personDto) {
         System.out.println();
     }
 
-    public static String testChangeArrayListValue ( List<PersonDto> personDtoList) {
-        for (PersonDto personDto1:personDtoList) {
+    public static String testChangeArrayListValue(List<PersonDto> personDtoList) {
+        for (PersonDto personDto1 : personDtoList) {
             personDto1.setName("12345");
         }
         return "1";
     }
 
 
-    public static <T> void testAAA(T ... a) {
+    public static <T> void testAAA(T... a) {
         System.out.println("abc");
     }
 }

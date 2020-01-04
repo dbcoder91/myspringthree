@@ -1,6 +1,7 @@
 package com.dbcoder.dto;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 
@@ -71,10 +72,19 @@ public class testObjectMain {
         }
         System.out.println();*/
 
-        int a = 1;
+       /* int a = 1;
         List<Integer> integers = new ArrayList<>();
         integers.add(a);
-        System.out.println();
+        System.out.println();*/
+//       String str = "[{\\\"share_profit_biz_type\\\":10,\\\"share_open\\\":0},{\\\"share_profit_biz_type\\\":40,\\\"share_open\\\":0}]";
+//        List<ShareModeVO> shareModeVOList = JSONObject.parseArray(str, ShareModeVO.class);
+        List<ShareModeVO> shareModeVOList = new ArrayList<>();
+        ShareModeVO shareModeVO = new ShareModeVO();
+        shareModeVO.setShareMode(0);
+        shareModeVO.setShareProfitBizType(10);
+        shareModeVOList.add(shareModeVO);
+        String str = JSON.toJSONString(shareModeVOList);
+        System.out.println(str);
     }
 
     public static Cat1 testCat1() {

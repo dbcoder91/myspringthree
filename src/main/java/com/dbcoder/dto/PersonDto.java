@@ -2,14 +2,16 @@ package com.dbcoder.dto;
 
 
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.List;
 
-public class PersonDto {
+public class PersonDto implements TestInterfaceVO{
     @NotNull(message="不能为空")
     private String name;
     private Integer age;
     private List<TestDto> testDtos;
     private Integer testAge;
+    private BigDecimal amount;
 
     @Override
     public String toString(){
@@ -46,5 +48,18 @@ public class PersonDto {
 
     public void setTestAge(Integer testAge) {
         this.testAge = testAge;
+    }
+
+    @Override
+    public String testStr() {
+        return null;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 }

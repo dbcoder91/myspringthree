@@ -5,12 +5,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.dbcoder.dto.PersonDto;
 import com.dbcoder.dto.TestDto;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.rmi.server.ExportException;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -163,9 +162,39 @@ public class StringTest {
         int hashB = b.hashCode();
         System.out.println();*/
 
-String a = "409820190219000000020012";
-        System.out.println(Long.parseLong(a));
+/*String a = "409820190219000000020012";
+        System.out.println(Long.parseLong(a));*/
+//        Long a = 123L;
+//        Long b = 456L;
+//        System.out.println(a + "" + b);
+//String str= "40,30";
+//
+//        List<String> a= Arrays.asList(str.split(","));
+//        List<String> b= Arrays.asList("30","40");
+//        Boolean f = a.containsAll(b);
+//        System.out.printf(f.toString());
 
+//       try{
+//           for (int i = 0; i < 10; i++) {
+//               testException(i);
+//           }
+//       } catch (Exception e){
+//           System.out.println(1111);
+//       }
+//        String name = "abner chai";
+        try {
+            String name = null;
+            assert (name!=null):"变量name为空null";
+            System.out.println(name);
+        } catch (Exception e) {
+            System.out.println("1");
+        }
+
+    }
+
+    public static void testException(int i) throws Exception {
+        System.out.println(i);
+        throw new Exception("test:" + i);
     }
 
     public static boolean isMobileNO(String mobiles) {

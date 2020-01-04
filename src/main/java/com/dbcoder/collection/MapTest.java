@@ -1,10 +1,15 @@
 package com.dbcoder.collection;
 
 
+import com.dbcoder.dto.PersonDto;
+
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MapTest {
     public static void main(String[] args) {
@@ -36,10 +41,31 @@ public class MapTest {
         Integer b=new Integer(0);
         System.out.println(b);*/
 
-        List<String> list =new ArrayList<>();
-        list.add("不纠结");
-        testListString(list);
-        System.out.println(list);
+        List<PersonDto> personDtos = new ArrayList<>();
+        PersonDto p = new PersonDto();
+        p.setAge(1);
+        p.setName("小一");
+        personDtos.add(p);
+
+        p = new PersonDto();
+        p.setAge(2);
+        p.setName("小二");
+        personDtos.add(p);
+
+        p = new PersonDto();
+        p.setAge(1);
+        p.setName("小五");
+        personDtos.add(p);
+
+        Map<Integer, PersonDto> personDtoMap = personDtos
+                .stream()
+                .collect(Collectors.toMap(PersonDto::getAge, personDto -> personDto,(k1,k2)->k2));
+        Boolean isContainsKey = personDtoMap.containsKey(3);
+        Map<Integer, List<PersonDto>> integerListMap = personDtos
+                .stream()
+                .collect(Collectors.groupingBy(PersonDto::getAge));
+        Boolean isContainsKeyMaplist = integerListMap.containsKey(1);
+        System.out.println("1");
     }
 
     public static void testListString(List<String> list){

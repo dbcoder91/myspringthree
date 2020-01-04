@@ -2,7 +2,12 @@ package com.dbcoder.collection;
 
 import com.dbcoder.dto.PersonDto;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
 * @Description:hashmap测试类
@@ -11,12 +16,10 @@ import java.util.*;
 */
 public class HashMapTest {
     public static void main(String[] args) {
-       /* HashMap<String*//* clusterName *//*, Set<String*//* brokerName *//*>> hashMap = new HashMap<String, Set<String>>(32);
         Set<String> brokerNames = new HashSet<>();
         brokerNames.add("111");
-        hashMap.put("key1", brokerNames);
         brokerNames.add("222");
-        System.out.println("测试成功！");*/
+        System.out.println("测试成功！");
 
         Map<Integer,List<PersonDto>> listMap = new HashMap<>();
 
